@@ -8,7 +8,7 @@ import cv2
 import tempfile
 
 # Load the trained model
-model_path = 'D:\Activity Recognition\CNN_LSTM.h5'
+model_path = 'CNN_LSTM.h5'
 activity_model = load_model(model_path)
 
 # Define activity labels
