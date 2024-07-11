@@ -8,15 +8,15 @@ import cv2
 import tempfile
 import os
 
-# Assuming the model file is in the same directory as your app.py
-model_filename = 'CNN_LSTM.h5'
-model_path = os.path.join(os.getcwd(), model_filename)
+# # Assuming the model file is in the same directory as your app.py
+# model_filename = 'CNN_LSTM.h5'
+# model_path = os.path.join(os.getcwd(), model_filename)
 
-# Load the trained model
-activity_model = load_model(model_path)
 # # Load the trained model
-# model_path = 'CNN_LSTM.h5'
 # activity_model = load_model(model_path)
+# Load the trained model
+model_path = 'CNN_LSTM.h5'
+activity_model = load_model(model_path)
 
 # Define activity labels
 activity_labels = ['WalkingWithDog', 'TaiChi', 'Swing', 'HorseRace']
