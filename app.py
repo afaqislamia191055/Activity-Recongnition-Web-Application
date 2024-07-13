@@ -6,10 +6,20 @@ from tensorflow.keras.preprocessing import image
 import cv2
 import os
 import tempfile
-print(cv2.__version__)
+
+# Set up the page config
+st.set_page_config(page_title="Activity Recognition Application", layout="wide")
+
+# Function to load activity model with caching
+@st.cache_resource
+def load_activity_model(model_path):
+    with st.spinner('Loading model...'):
+        model = load_model(model_path)
+    return model
+
 # Load the trained model
-model_path = 'D:\Activity Recognition\Activity-Recongnition-Web-Application\CNN_LSTM.h5'
-activity_model = load_model(model_path)
+model_path = 'CNN_LSTM.h5'
+activity_model = load_activity_model(model_path)
 
 # Define activity labels
 activity_labels = ['WalkingWithDog', 'TaiChi', 'Swing', 'HorseRace']
